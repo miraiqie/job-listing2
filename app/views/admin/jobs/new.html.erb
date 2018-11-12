@@ -1,0 +1,7 @@
+<h2>新增职缺</h2>
+<br>
+<%= simple_form_for @job do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "发布" %>
+<% end %>
