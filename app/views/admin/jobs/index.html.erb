@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <td>职缺</td>
+      <td>薪资下限</td>
+      <td>薪资上限</td>
       <td>管理</td>
       <td>发布时间</td>
     </tr>
@@ -12,8 +14,10 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= link_to(job.title, admin_job_path(job)) %></td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
         <td>
-          <%= link_to("Edit", edit_admin_job_path(job)) %>
+          <%= link_to("Edit", edit_admin_job_path(job)) %> | 
           <%= link_to("Delete", admin_job_path(job), method: :delete, :data => { confirm: "Are you sure?"}) %>
         </td>
         <td><%= job.updated_at %></td>
