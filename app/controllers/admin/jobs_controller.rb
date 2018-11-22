@@ -4,7 +4,7 @@ class Admin::JobsController < ApplicationController
   layout "admin"
 
   def index
-    @jobs = Job.all.order("updated_at DESC")
+    @jobs = Job.all.order('updated_at DESC')
   end
 
   def show
